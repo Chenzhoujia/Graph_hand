@@ -1,0 +1,18 @@
+[model/train_multi_gpu] 2018-12-18 15:56:22.812735: step 0/29492, loss = 106321.569, 104.019 sec/batch, 0.520 sec/sample
+[model/train_multi_gpu] 2018-12-18 16:01:20.250937: step 0/29492, loss = 101157.434, 101.162 sec/batch, 0.506 sec/sample
+model has been saved to ./exp/train_cache/nyu_training_s2_f128_daug_um_v1/model.ckpt
+[model/train_multi_gpu] 2018-12-18 16:09:13.684216: step 5/29492, loss = 93937.677, 91.903 sec/batch, 0.460 sec/sample
+[model/train_multi_gpu] 2018-12-18 16:16:58.419479: step 10/29492, loss = 86055.520, 94.434 sec/batch, 0.472 sec/sample
+[model/train_multi_gpu] 2018-12-19 15:32:55.677478: step 0/29492, loss = 100776.484, 113.470 sec/batch, 0.567 sec/sample
+[model/train_multi_gpu] 2018-12-19 15:36:34.841070: step 0/29492, loss = 111128.289, 103.164 sec/batch, 0.516 sec/sample
+model has been saved to ./exp/train_cache/nyu_training_s2_f128_daug_um_v1/model.ckpt
+[model/train_multi_gpu] 2018-12-19 15:47:05.733697: step 0/29492, loss = 102101.558, 100.246 sec/batch, 0.501 sec/sample
+model has been saved to ./exp/train_cache/nyu_training_s2_f128_daug_um_v1/model.ckpt
+[model/train_multi_gpu] 2018-12-19 15:55:00.910239: step 5/29492, loss = 90138.442, 91.130 sec/batch, 0.456 sec/sample
+[model/train_multi_gpu] 2018-12-19 17:45:12.757143: step 0/29492, loss = 108870.461, 98.977 sec/batch, 0.495 sec/sample
+model has been saved to ./exp/train_cache/nyu_training_s2_f128_daug_um_v1/model.ckpt
+[model/train_multi_gpu] 2018-12-19 17:53:09.978574: step 5/29492, loss = 93919.966, 91.228 sec/batch, 0.456 sec/sample
+[model/train_multi_gpu] 2018-12-19 18:00:48.556590: step 10/29492, loss = 89573.680, 91.420 sec/batch, 0.457 sec/sample
+[model/train_multi_gpu] 2018-12-19 18:07:25.467408: step 0/29492, loss = 100498.050, 100.915 sec/batch, 0.505 sec/sample
+model has been saved to ./exp/train_cache/nyu_training_s2_f128_daug_um_v1/model.ckpt
+[model/train_multi_gpu] 2018-12-19 22:44:40.153381: step 0/29492, loss = 121070.266, 101.582 sec/batch, 0.508 sec/sample
