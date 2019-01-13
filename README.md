@@ -1,7 +1,7 @@
 # Graph_hand
 一个经过测试,可使用的基于denseRge和graph_net的用图网络优化姿态估计结果的工程
 # 图网络工程闭环：
-# （1）：训练数据生成<---datagenerate
+# （1）：训练数据生成<---datagenerate（用训练好的denseReg模型生成训练图网络的graph.dat）
 
 (a)nyu.py p26行，数据导入
 directory = '/media/chen/4CBEA7F1BEA7D1AE/Download/hand_dataset/NYU/'
@@ -51,10 +51,10 @@ else:
     saver.restore(sess, checkpoint_path)
 
 
-# （2）：图网络训练<----GNN_optim
+# （2）：图网络训练<----GNN_optim(用Graph.data生成GNN模型)
 通过saved文件夹下的bash脚本运行，训练好的模型也存在里面，上一个步骤生成的数据也应该放在这个文件夹下
 https://github.com/deepmind/graph_nets
-# （3）：dense master 待优化结果生成<---datagenerate
+# （3）：dense master 待优化结果生成<---datagenerate（用训练好的denseReg模型生成测试图网络的标签txt）
 用测试模式运行
 运行：/home/chen/Documents/denseReg-master/model/hourglass_um_crop_tiny.py
 参数：--dataset nyu --batch_size 3 --num_stack 2 --num_fea 128 --debug_level 2 --is_train False
