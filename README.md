@@ -62,6 +62,7 @@ Graph_hand/datagenerate/model/test_model.py 中93～94卸载文本文件中
 
 # （4）：图网络优化<----GNN_opt_test
 与训练时的模型保持一致
+手动运行hand_GNN_test.py4次
 因为GPU一次吃不了8252的图，所以分了4次，核心代码在hand_GNN_test中，生成数据文件在同一个文件目录下
 # （5）：结果评估
 
