@@ -1,1 +1,2 @@
 通过saved文件夹下的bash脚本运行，训练好的模型也存在里面，上一个步骤生成的数据也应该放在这个文件夹下
+https://github.com/deepmind/graph_nets
