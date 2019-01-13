@@ -52,6 +52,8 @@ else:
 
 
 # （2）：图网络训练
+通过saved文件夹下的bash脚本运行，训练好的模型也存在里面，上一个步骤生成的数据也应该放在这个文件夹下
+https://github.com/deepmind/graph_nets
 # （3）：dense master 待优化结果生成
 用测试模式运行
 运行：/home/chen/Documents/denseReg-master/model/hourglass_um_crop_tiny.py
@@ -59,6 +61,7 @@ else:
 Graph_hand/datagenerate/model/test_model.py 中93～94卸载文本文件中
 
 # （4）：图网络优化
+与训练时的模型保持一致
 
 # （5）：结果评估
 
