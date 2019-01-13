@@ -53,5 +53,10 @@ else:
 
 # （2）：图网络训练
 # （3）：dense master 待优化结果生成
+用测试模式运行
+运行：/home/chen/Documents/denseReg-master/model/hourglass_um_crop_tiny.py
+参数：--dataset nyu --batch_size 3 --num_stack 2 --num_fea 128 --debug_level 2 --is_train False
+Graph_hand/datagenerate/model/test_model.py 中93～94卸载文本文件中
+
 # （4）：图网络优化
 
