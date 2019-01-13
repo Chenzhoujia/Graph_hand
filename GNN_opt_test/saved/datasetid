@@ -1,0 +1,8 @@
+#!/bin/bash
+# This is our first script.
+echo 'Begin!'
+source activate dense
+for i in {1..1040}
+do
+    python /home/chen/Documents/GNN_demo/hand_GNN.py $i 1000
+done
