@@ -50,17 +50,17 @@ if FLAGS.nolocal_UM:
 else:
     saver.restore(sess, checkpoint_path)
 
-
+生成数据链接: https://pan.baidu.com/s/1ofmTiX01JiNvTSJEVat3_A 提取码: bkdd 
 # （2）：图网络训练<----GNN_optim(用Graph.data生成GNN模型)
 通过saved文件夹下的bash脚本运行，训练好的模型也存在里面，上一个步骤生成的数据也应该放在这个文件夹下
 https://github.com/deepmind/graph_nets
-# （3）：dense master 待优化结果生成<---datagenerate（用训练好的denseReg模型生成测试图网络的标签txt）
+# （3）：dense master 待优化结果生成<---datagenerate（用训练好的denseReg模型生成测试图网络的txt（包括输入和输出生成的数据在model文件夹下面））
 用测试模式运行
 运行：/home/chen/Documents/denseReg-master/model/hourglass_um_crop_tiny.py
 参数：--dataset nyu --batch_size 3 --num_stack 2 --num_fea 128 --debug_level 2 --is_train False
 Graph_hand/datagenerate/model/test_model.py 中93～94写在文本文件中
 
-# （4）：图网络优化<----GNN_opt_test
+# （4）：图网络优化<----GNN_opt_test（用（2）训练的模型和（3）的输入数据得到优化后的结果）
 与训练时的模型保持一致
 手动运行hand_GNN_test.py4次
 因为GPU一次吃不了8252的图，所以分了4次，核心代码在hand_GNN_test中，生成数据文件在同一个文件目录下
