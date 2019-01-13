@@ -65,5 +65,4 @@ Graph_hand/datagenerate/model/test_model.py 中93～94写在文本文件中
 手动运行hand_GNN_test.py4次
 因为GPU一次吃不了8252的图，所以分了4次，核心代码在hand_GNN_test中，生成数据文件在同一个文件目录下
 # （5）：结果评估<---datagenerate
-test.py
-
+Graph_hand/datagenerate/model/test.py
