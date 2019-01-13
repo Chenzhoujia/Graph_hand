@@ -90,8 +90,11 @@ def test(model, selected_step):
                 test_num += 1
                 if test_num >= total_test_num:
                     xyz_gt_list = np.concatenate(xyz_gt_list, axis=0)
-                    np.savetxt("a_5.txt", xyz_gt_list,fmt="%.5f")
-                    np.savetxt("a_all.txt", xyz_gt_list)  # 缺省按照'%.18e'格式保存数据，以空格分隔
+                    np.savetxt("xyz_gt_test_5.txt", xyz_gt_list,fmt="%.5f")
+                    np.savetxt("xyz_gt_test_all.txt", xyz_gt_list)  # 缺省按照'%.18e'格式保存数据，以空格分隔
+                    xyz_val_list = np.concatenate(xyz_val_list, axis=0)
+                    np.savetxt("xyz_val_test_5.txt", xyz_val_list,fmt="%.5f")
+                    np.savetxt("xyz_val_test_all.txt", xyz_val_list)  # 缺省按照'%.18e'格式保存数据，以空格分隔
                     #xyz_val_list2 = np.loadtxt("a.txt")
                     print('finish test')
                     f.close()
