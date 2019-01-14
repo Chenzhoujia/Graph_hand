@@ -394,6 +394,7 @@ def restore_model(sess,path):
 #input_graph_1,target_nodes_1,outputs_1,iteration
 def figure_joint_skeleton(uvd_pt1,uvd_pt2,uvd_pt3,test_num):
     #uvd_pt = np.reshape(uvd_pt,(14,3))
+    uvd_pt1 = uvd_pt1[:,1:4]
     fig = plt.figure(1)
     fig.clear()
     ax = fig.add_subplot(2,3,1)
@@ -619,7 +620,7 @@ def figure_joint_skeleton(uvd_pt1,uvd_pt2,uvd_pt3,test_num):
     ax.plot([uvd_pt2[13,0], uvd_pt2[10,0]],
             [uvd_pt2[13,1], uvd_pt2[10,1]], color='r', linewidth=1)
 
-    plt.savefig("/home/cjy/GNN_demo/saved/image/"+"/"+str(test_num).zfill(10)+".png")
+    plt.savefig("/home/chen/Documents/.git/GNN_ocl/saved/image"+"/"+str(test_num).zfill(10)+".png")
 # pylint: enable=redefined-outer-name
 
 
@@ -704,7 +705,7 @@ bone = [[0 ,1 ,1 ,2 ,3 ,3 ,4 ,5 ,5 ,6 ,7 ,7 ,8 ,9 ,9 ,10,10,11,12,13,13,13,13,13
 bone_self = [[0,1,2,3,4,5,6,7,8,9,10,11,12,13],#"receivers"
              [0,1,2,3,4,5,6,7,8,9,10,11,12,13]]#"senders"
 
-fn = '/home/cjy/GNN_demo/saved/graph.dat'
+fn = '/home/chen/Documents/.git/GNN_ocl/saved/graph.dat'
 with open(fn, 'rb') as f:
     for i in range(436529):
         pose = pickle.load(f)
@@ -778,7 +779,7 @@ try:
 except NameError:
   pass
 sess = tf.Session()
-restore_file = '/home/cjy/GNN_demo/saved'+'/model.pickle'
+restore_file = '/home/chen/Documents/.git/GNN_ocl/saved'+'/model.pickle'
 #train_writer = tf.summary.FileWriter('/home/chen/Documents/GNN_demo/saved',sess.graph)
 if os.path.exists(restore_file):
     restore_model(sess, restore_file)
@@ -834,13 +835,14 @@ print("dataset:" + str(datasetid) +":" + str(train_values["loss"])+": vs :" + st
 
 #  if (iteration % 1) == 0:
 save_model(sess,restore_file)
-print('saved %d model %f' % last_iteration )
+print('saved %d model' % last_iteration)
 
-# image_num = random.randint(0, batch_size_tr)
-# input_graph_1 = train_values["input_graph"][0].nodes[image_num * 14: (image_num + 1) * 14,:]
-# target_nodes_1 = train_values["target_nodes"][0].nodes[image_num*14:(image_num+1)*14,:]
-# outputs_1 = train_values["outputs"][0].nodes[image_num*14:(image_num+1)*14,:]
-# figure_joint_skeleton(input_graph_1,target_nodes_1,outputs_1,datasetid)
+#image_num = random.randint(0, batch_size_tr)
+for image_num in range(batch_size_tr):
+    input_graph_1 = train_values["input_graph"][0].nodes[image_num * 14: (image_num + 1) * 14,:]
+    target_nodes_1 = train_values["target_nodes"][0].nodes[image_num*14:(image_num+1)*14,:]
+    outputs_1 = train_values["outputs"][0].nodes[image_num*14:(image_num+1)*14,:]
+    figure_joint_skeleton(input_graph_1,target_nodes_1,outputs_1,datasetid*batch_size_tr+image_num)
 
 """
 if elapsed_since_last_log > log_every_seconds:
