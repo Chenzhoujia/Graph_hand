@@ -714,8 +714,12 @@ with open(fn, 'rb') as f:
             where_are_inf = np.isinf(pose.nodes_pt)
             pose.nodes_pt[where_are_nan] = 0
             pose.nodes_pt[where_are_inf] = 0
+            
+            #norm
             nodes_pt_norm = (pose.nodes_pt).reshape(14, 3) - (pose.nodes_pt).reshape(14, 3)[13, :]
             nodes_gt_norm = (pose.nodes_gt).reshape(14, 3) - (pose.nodes_gt).reshape(14, 3)[13, :]
+            nodes_pt_norm = nodes_pt_norm/np.sqrt(np.sum(np.square(nodes_pt_norm[7,:])))
+            nodes_gt_norm = nodes_gt_norm / np.sqrt(np.sum(np.square(nodes_gt_norm[7, :])))
 
             #chen nodes_pt Disturbance
             joint_mask = np.ones((14,1))
